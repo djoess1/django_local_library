@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book List</h1>
+  <a href=""></a>
+  {% if book_list %}
+  <!-- <ul> -->
+  <table class="tableau-style">
+    <thead>
+      <tr>
+        <th>Titre du livre</th>
+      </tr>
+    </thead>
+
+    <!-- <li> -->
+      <tbody>
+          {% for book in book_list %}
+          <tr>
+            <td>
+          <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+        <!-- </li> -->
+        
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  </table>
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %} 
+{% endblock %}
