@@ -24,9 +24,9 @@
                  <hr>
                 {% if user.is_authenticated %}
                   <li>User: {{ user.get_username }}</li>
-                  <li><a href="{% url 'author-create' %}">Add new author</a></li>
-                  <li><a href="{% url 'book-create' %}">Add new book</a></li>
-                  <li><a href="{% url 'my-borrowed' %}">My borrowed</a></li>
+                  <li><a href="{% url 'author-create' %}">+ nouvel auteur</a></li>
+                  <li><a href="{% url 'book-create' %}">+ nouveau livre</a></li>
+                  <li><a href="{% url 'my-borrowed' %}">Mes emprunts</a></li>
                   <li><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
 
                {% else %}
@@ -35,7 +35,7 @@
                {% if perms.catalog.can_mark_returned %}
                   <hr>
                   <li>Staff:</li>
-                  <li><a href="{% url 'all-borrowed' %}">All brorrowed</a></li>                
+                  <li><a href="{% url 'all-borrowed' %}">Tous les emprunts</a></li>                
                 {% endif %}
               </ul>
             {% endblock %}
